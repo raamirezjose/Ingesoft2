@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-body">
+    <h6 class="card-subtitle">Autor:{{ currentComment.AutorName }}</h6>
+    <h6 class="card-subtitle"> {{ currentComment.Descripcion }}</h6>  
+    <h6 class="card-subtitle">Fecha publicacion:{{ currentComment.FechaPublicacion }}</h6>
+    <h6 class="card-subtitle">conteo de votos:{{ currentComment.RatingCount }}</h6>
+    <h6 class="card-subtitle">promedio de votos:{{ currentComment.Average }}</h6>
+    <ngb-rating [(rate)]="currentRate" max = "5" >
+      <ng-template let-fill="fill" let-index="index" >
+        <span class="star" [class.filled]="fill === 100" [class.bad]="index < 2">&#9733;</span>
+      </ng-template>
+    </ngb-rating>
+     <pre style="visibility:hidden">{{rating()}}</pre> 
+  </div>
+</div>

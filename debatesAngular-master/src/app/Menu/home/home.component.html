@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" [routerLink]="['/Home']">Plataforma de debates </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" *ngIf=menu.Scroll>
+        <button type="button" class="btn btn-light" (click)="navigateComponent('ScrollDebate');">Ver debates</button>
+      </li>
+      <li class="nav-item active" *ngIf=menu.CreateDebate>
+        <button type="button" class="btn btn-light" (click)="navigateComponent('Debates');">Crear un nuevo debate</button>
+      </li>
+      <li class="nav-item" *ngIf=menu.Report>
+        <button type="button" class="btn btn-light" (click)="navigateComponent('Report')">Informes</button>
+      </li> 
+      <li class="nav-item" *ngIf=menu.RegisterUser>
+          <button type="button" class="btn btn-light" (click)="navigateComponent('RegisterUser')">Crear un nuevo usuario</button>
+        </li> 
+      <li class="nav-item" *ngIf=menu.UserInfo>
+        <button type="button" class="btn btn-light" (click)="navigateComponent('User')">{{user}}</button>
+        <ul *ngIf="showUserOption">
+          <li><button type="button" class="btn btn-light" (click)="navigateComponent('DeleteAccount')">Borrar Cuenta</button></li>
+          <li><button type="button" class="btn btn-light" (click)="signOut()">Cerrar Sesion</button></li>
+        </ul>
+      </li> 
+    </ul>   
+  </div>
+</nav>
+<app-debates *ngIf=showDebatesComponent></app-debates>
+<app-reports *ngIf=showReportComponent></app-reports>
+<app-scroll-debates *ngIf=showScrollDebatesComponent></app-scroll-debates>
+<app-delete-account *ngIf=showDeleteAccount></app-delete-account>
+<app-register-user *ngIf=showRegisterUser></app-register-user>

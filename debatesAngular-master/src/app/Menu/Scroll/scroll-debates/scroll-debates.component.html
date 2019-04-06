@@ -1,0 +1,5 @@
+<h3>Todos los debates</h3>
+<div class = "card">
+    <app-debates-in-scroll [debate]="xdebate" *ngFor="let xdebate of alldebates$ | async"></app-debates-in-scroll>
+    <div *ngIf="countDebates===0">no se han creado debates</div>
+</div>

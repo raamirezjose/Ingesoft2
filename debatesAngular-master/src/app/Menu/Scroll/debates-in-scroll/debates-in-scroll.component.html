@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Debate: {{ debate.Titulo }} </h5>
+      <h6 class="card-subtitle">Descripcion: {{ debate.Tema }}</h6>
+      <h6 class="card-subtitle">Autor:{{ debate.AutorName }}</h6>
+      <h6 class="card-subtitle">Fecha publicacion:{{ debate.FechaPublicacion }}</h6>
+      <h6 class="card-subtitle">Fecha vencimiento:{{ debate.FechaVencimiento }}</h6>
+      <h6 class="card-subtitle">numero de votos:{{ debate.RatingCount}}</h6>
+      <h6 class="card-subtitle">promedio:{{ debate.Average}}</h6>
+      <ngb-rating [(rate)]="currentRate" max = "5" >
+        <ng-template let-fill="fill" let-index="index" >
+          <span class="star" [class.filled]="fill === 100" [class.bad]="index < 2">&#9733;</span>
+        </ng-template>
+      </ngb-rating>
+       <pre style="visibility:hidden">{{rating()}}</pre> 
+      <button type="button" (click)="getComment()">{{textButton}}</button>
+      <div *ngIf = "showComment">
+          <app-comments [currentComment]="xcomment" *ngFor="let xcomment of commentsInDebate$ | async"></app-comments>
+      </div> 
+      
+      <form [formGroup]="debatesInScrollForm" novalidate autocomplete="off">
+          <div *ngIf="debate.Estado === false">
+              <input type = "text" name="Descripcion" formControlName="Descripcion" placeholder="¿Que estas pensando?"/>
+              <button type="submit" [disabled]="debatesInScrollForm.invalid"class="btn btn-success"(click)="sendComment()">Publicar comentario</button>
+          </div>     
+      </form>
+      
+      <!-- <p class="card-text"><span class="date">{{ task.date | date: 'dd/MM/yyyy' }}</span></p> -->
+    </div>
+  </div>
