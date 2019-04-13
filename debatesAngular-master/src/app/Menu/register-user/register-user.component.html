@@ -15,15 +15,15 @@
 
                   <label for="Email"><b>Correo electronico</b></label>
                   <input type="Email"  name="Email" formControlName="Email">
-                  <div class="error" *ngIf="myForm.get('Email').hasError('required') && myForm.get('Email').touched">CorreoElectronico requerido</div>
-                  <div class="error" *ngIf="myForm.get('Email').hasError('Email') && myForm.get('Email').touched">Ingrese un correo electronico valido</div>     
+                  <div class="error" *ngIf="myForm.get('Email').hasError('required') && myForm.get('Email').touched">Correo electrónico requerido</div>
+                  <div class="error" *ngIf="myForm.get('Email').hasError('Email') && myForm.get('Email').touched">Ingrese un correo electrónico válido</div>     
 
                   <label for="Password"><b>Contraseña</b></label>
                   <input type="password"  name="Password" formControlName="Password">                
                   <div class="error" *ngIf="myForm.get('Password').hasError('required') && myForm.get('Password').touched">No se ha ingresado una contraseña</div>
                   
                   <label for="Rol"><b>Rol</b></label>
-                  <select name="Rol" formControlName="Rol">
+                  <select name="Rol" formControlName="Rol" class="form-control">
                     <option value="Student">Estudiante</option>
                     <option value="Prelector">Conferencista</option>
                   </select>             

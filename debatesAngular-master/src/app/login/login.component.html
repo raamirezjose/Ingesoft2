@@ -8,8 +8,8 @@
 
                   <label for="Email" ><b>Direccion de correo</b></label>
                   <input type="text" formControlName="Email" name="uname" >
-                  <div class="error" *ngIf="loginForm.get('Email').hasError('required') && loginForm.get('Email').touched">CorreoElectronico requerido</div>
-                  <div class="error" *ngIf="loginForm.get('Email').hasError('email') && loginForm.get('Email').touched">Ingrese un correo electronico valido</div> 
+                  <div class="error" *ngIf="loginForm.get('Email').hasError('required') && loginForm.get('Email').touched">Correo electrónico requerido</div>
+                  <div class="error" *ngIf="loginForm.get('Email').hasError('email') && loginForm.get('Email').touched">Ingrese un correo electrónico valido</div> 
 
                   <label for="Password"><b>Contraseña</b></label>
                   <input type="password"  name="Password" formControlName="Password">                
