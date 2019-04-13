@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
         case 'ScrollDebate':{this.showScrollDebatesComponent = true;break;}
         case 'User':{this.showUserOption=true;break;}
         case 'DeleteAccount':{this.showDeleteAccount=true;break;}
-        case 'RegisterUser':{this.showRegisterUser=true;break;}
+        case 'RegisterUser':{this.showRegisterUser=true;}break;
     }
   };
 

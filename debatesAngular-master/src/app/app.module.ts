@@ -42,6 +42,7 @@ import { DeleteAccountComponent } from './Menu/User/delete-account/delete-accoun
     DebatesInScrollComponent,
     CommentsComponent,
     DeleteAccountComponent,
+
     
   ],
   imports: [

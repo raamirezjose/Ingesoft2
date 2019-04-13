@@ -1,6 +1,95 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" [routerLink]="['/Home']">Plataforma de debates </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true">
+  <nav class="uk-offcanvas-bar">
+    <button class="uk-offcanvas-close" type="button" uk-close></button>
+    <ul class="list-unstyled pl-0 w-100">
+      <li class="" *ngIf=menu.Scroll>
+        <button type="button" class="btn btn-light" (click)="navigateComponent('ScrollDebate');">Ver
+          debates</button>
+      </li>
+      <li class="" *ngIf=menu.CreateDebate>
+        <button type="button" class="btn btn-light" (click)="navigateComponent('Debates');">Crear un nuevo
+          debate</button>
+      </li>
+      <li class="" *ngIf=menu.Report>
+        <button type="button" class="btn btn-light" (click)="navigateComponent('Report')">Informes</button>
+      </li>
+      <li class="" *ngIf=menu.RegisterUser>
+        <button type="button" class="btn btn-light" (click)="navigateComponent('RegisterUser')">Crear un nuevo
+          usuario</button>
+      </li>
+      <li class="w-100" *ngIf=menu.UserInfo>
+        <!--<button type="button" class="btn btn-light" (click)="navigateComponent('User')">{{user}}</button>-->
+        <ul class="" *ngIf="showUserOption">
+          <li><button type="button" class="btn btn-light" (click)="navigateComponent('DeleteAccount')">Borrar
+              Cuenta</button></li>
+          <li><button type="button" class="btn btn-light" (click)="signOut()">Cerrar Sesion</button></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div>
+  <div class="d-flex">
+    <div id="menu-v-lateral" class="col-md-1 px-0 d-none d-md-block position-fixed h-100">
+      <div class="mb-3 pt-5 pb-2 px-1">
+        <div class="text-center">
+          <div id="container-user-img" class="rounded-circle">
+          </div>
+          <p class="text-center mb-0 text-12 text-f5">Administrador</p>
+        </div>
+      </div>
+      <div *ngIf="menu.Scroll">
+        <div class="text-center">
+          <button class="uk-button px-4 py-3 btn-block btn-d-menu" (click)="navigateComponent('ScrollDebate');">
+            <p class="text-center"><i class="far fa-list-alt fa-2x"></i></p>
+            <p class="text-center mb-0">Ver debates</p>
+          </button>
+        </div>
+      </div>
+      <div *ngIf="menu.CreateDebate">
+        <div class="text-center">
+          <button class="uk-button px-4 py-3 btn-block btn-d-menu" (click)="navigateComponent('Debates');">
+            <p class="text-center"><i class="far fa-plus-square fa-2x"></i></p>
+            <p class="text-center mb-0">Crear debate</p>
+          </button>
+        </div>
+      </div>
+      <div *ngIf="menu.Report">
+        <div class="text-center">
+          <button class="uk-button px-4 py-3 btn-block btn-d-menu" (click)="navigateComponent('Report');">
+            <p class="text-center"><i class="far fa-file-alt fa-2x"></i></p>
+            <p class="text-center mb-0">Informes</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 px-0 offset-md-1 col-md-11">
+      <header class="text-right header-politrivia mb-0 position-sticky">
+        <div class="d-flex">
+          <div class="col-1 px-0">
+            <button class="d-block d-md-none uk-button-default" type="button" uk-toggle="target: #offcanvas-push">
+              <i class="fas fa-bars fa-inverse text-white"></i></button>
+          </div>
+          <div class="col-11 text-white text-right px-0">
+            <img src="../../../assets/Images/icono-politrivia.svg" alt="Logo politrivia" class="icon-banner">
+          </div>
+        </div>
+      </header>
+      <div>
+        <app-debates *ngIf=showDebatesComponent></app-debates>
+        <app-reports *ngIf=showReportComponent></app-reports>
+        <app-scroll-debates *ngIf=showScrollDebatesComponent></app-scroll-debates>
+        <app-delete-account *ngIf=showDeleteAccount></app-delete-account>
+        <app-register-user *ngIf=showRegisterUser></app-register-user>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<nav class="d-none navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" [routerLink]="['/Home']"> </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -10,26 +99,25 @@
         <button type="button" class="btn btn-light" (click)="navigateComponent('ScrollDebate');">Ver debates</button>
       </li>
       <li class="nav-item active" *ngIf=menu.CreateDebate>
-        <button type="button" class="btn btn-light" (click)="navigateComponent('Debates');">Crear un nuevo debate</button>
+        <button type="button" class="btn btn-light" (click)="navigateComponent('Debates');">Crear un nuevo
+          debate</button>
       </li>
       <li class="nav-item" *ngIf=menu.Report>
         <button type="button" class="btn btn-light" (click)="navigateComponent('Report')">Informes</button>
-      </li> 
+      </li>
       <li class="nav-item" *ngIf=menu.RegisterUser>
-          <button type="button" class="btn btn-light" (click)="navigateComponent('RegisterUser')">Crear un nuevo usuario</button>
-        </li> 
+        <button type="button" class="btn btn-light" (click)="navigateComponent('RegisterUser')">Crear un nuevo
+          usuario</button>
+      </li>
       <li class="nav-item" *ngIf=menu.UserInfo>
         <button type="button" class="btn btn-light" (click)="navigateComponent('User')">{{user}}</button>
         <ul *ngIf="showUserOption">
-          <li><button type="button" class="btn btn-light" (click)="navigateComponent('DeleteAccount')">Borrar Cuenta</button></li>
+          <li><button type="button" class="btn btn-light" (click)="navigateComponent('DeleteAccount')">Borrar
+              Cuenta</button></li>
           <li><button type="button" class="btn btn-light" (click)="signOut()">Cerrar Sesion</button></li>
         </ul>
-      </li> 
-    </ul>   
+      </li>
+    </ul>
   </div>
 </nav>
-<app-debates *ngIf=showDebatesComponent></app-debates>
-<app-reports *ngIf=showReportComponent></app-reports>
-<app-scroll-debates *ngIf=showScrollDebatesComponent></app-scroll-debates>
-<app-delete-account *ngIf=showDeleteAccount></app-delete-account>
-<app-register-user *ngIf=showRegisterUser></app-register-user>
+-->
