@@ -16,6 +16,10 @@
     color: #fff;
 }
 
+#nav-offcanvas{
+    background-color: #3097d1;
+}
+
 .btn-d-menu:hover{
     font-size: 12px;
     line-height: 1;
