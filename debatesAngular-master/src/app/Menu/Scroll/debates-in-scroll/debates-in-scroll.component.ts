@@ -19,21 +19,23 @@ import { Rating } from 'src/app/Model/rating';
 export class DebatesInScrollComponent implements OnInit {
 
   @Input() debate: Debate;
-   public currentRate = 0;
-  public lastRate = 0;
+  public currentRate ;
   public debatesInScrollForm:FormGroup;
   public showComment = false;
   public textButton = "Ver comentarios";
   commentsInDebate$ : Observable<Comment>;
   constructor(private formBuilder:FormBuilder,
     private usr:UserService,private commentService:CommentService
-    ,private ratingService:RatingService) {}
+    ,private ratingService:RatingService) {
+      
+     // this.currentRate = this.debate.Rate;
+    }
 
   ngOnInit() {
+    console.log(this.debate);
       this.debatesInScrollForm = this.formBuilder.group({
         Descripcion:['',Validators.required]
       });
-      this.currentRate = this.debate.Rate;
   }
 
   async sendComment()
@@ -48,7 +50,7 @@ export class DebatesInScrollComponent implements OnInit {
       {
         this.debatesInScrollForm.reset();
       }
-      alert(response.Message)   
+      alert(response.Message);   
       this.showComment = false;
       this.getComment();
   }
@@ -68,14 +70,11 @@ export class DebatesInScrollComponent implements OnInit {
 
   async rating()
   {
-    if(this.lastRate != this.currentRate)
-    { 
-      this.lastRate = this.currentRate; 
-      let rating = new Rating();
+    console.log(this.currentRate);
+      /* let rating = new Rating();
       rating.AutorID  = this.usr.getUserId();
       rating.DebateId = this.debate.Id;
       rating.Rate = this.currentRate;
-      await this.ratingService.add(rating).toPromise(); 
-    }
+      await this.ratingService.add(rating).toPromise();    */ 
   }
 }

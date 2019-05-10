@@ -273,6 +273,10 @@
     <Compile Include="Migrations\201903221332134_debateratin.Designer.cs">
       <DependentUpon>201903221332134_debateratin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905091529199_updatedatabse.cs" />
+    <Compile Include="Migrations\201905091529199_updatedatabse.Designer.cs">
+      <DependentUpon>201905091529199_updatedatabse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comments.cs" />
     <Compile Include="Models\Debates.cs" />
@@ -375,7 +379,9 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -460,6 +466,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903221332134_debateratin.resx">
       <DependentUpon>201903221332134_debateratin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905091529199_updatedatabse.resx">
+      <DependentUpon>201905091529199_updatedatabse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

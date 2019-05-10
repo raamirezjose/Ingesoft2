@@ -17,6 +17,7 @@ export class CommentsComponent implements OnInit {
   public lastRate = 0;
   ngOnInit() {
     this.currentRate = this.currentComment.Rate;
+    
   }
 
   async rating()

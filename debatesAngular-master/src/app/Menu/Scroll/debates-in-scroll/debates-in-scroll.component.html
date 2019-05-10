@@ -11,12 +11,13 @@
         <tr class="card-subtitle"><th class="py-1">Promedio</th><td class="py-1">{{ debate.Average }}</td></tr>
       </table>
     </div>
-    <ngb-rating [(rate)]="currentRate" max="5">
+  
+     <ngb-rating [(rate)]="currentRate" max="5" [(ngModel)] = "currentRate" (click)="rating()">
       <ng-template let-fill="fill" let-index="index">
-        <span class="star" [class.filled]="fill === 100" [class.bad]="index < 2">&#9733;</span>
+        <span   class="star" [class.filled]="fill === 100" [class.bad]="index < 2">&#9733;</span>
       </ng-template>
-    </ngb-rating>
-    <!-- <pre style="visibility:hidden">{{rating()}}</pre> -->
+    </ngb-rating> 
+    <pre>Rate: <b>{{currentRate}}</b></pre>
     <div *ngIf="showComment">
       <app-comments [currentComment]="xcomment" *ngFor="let xcomment of commentsInDebate$ | async"></app-comments>
     </div>
