@@ -7,11 +7,11 @@
     </div>
     <h6 class="card-subtitle">Conteo de votos: {{ currentComment.RatingCount }}</h6>
     <h6 class="card-subtitle">Promedio de votos: {{ currentComment.Average }}</h6>
-    <ngb-rating [(rate)]="currentRate" max="5">
+    <ngb-rating [(rate)]="currentRate" max="5" [(ngModel)] = "currentRate" (click)="rating()">
       <ng-template let-fill="fill" let-index="index">
-        <span class="star" [class.filled]="fill === 100" [class.bad]="index < 2">&#9733;</span>
+        <span   class="star" [class.filled]="fill === 100" [class.bad]="index < 2">&#9733;</span>
       </ng-template>
-    </ngb-rating>
+    </ngb-rating> 
     <pre style="visibility:hidden">{{rating()}}</pre>
   </div>
 </div>

@@ -14,7 +14,6 @@ export class CommentsComponent implements OnInit {
   @Input() currentComment: Comment;
   constructor(private ratingService:RatingService,private usr:UserService) { }
   currentRate = 0;
-  public lastRate = 0;
   ngOnInit() {
     this.currentRate = this.currentComment.Rate;
     
@@ -22,17 +21,11 @@ export class CommentsComponent implements OnInit {
 
   async rating()
   {
-    if(this.lastRate != this.currentRate)
-    { 
-      this.lastRate = this.currentRate;   
       let rating = new Rating();
       rating.AutorID  = this.usr.getUserId();
       rating.DebateId = this.currentComment.IdDebate;
       rating.CommentId = this.currentComment.Id;
       rating.Rate = this.currentRate;
-      console.log(rating);
       await this.ratingService.add(rating).toPromise();        
     }
-    return "";
-  }
 }

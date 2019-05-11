@@ -32,7 +32,8 @@ export class DebatesInScrollComponent implements OnInit {
     }
 
   ngOnInit() {
-    console.log(this.debate);
+    console.log(this.debate.Rate);
+    this.currentRate = this.debate.Rate;
       this.debatesInScrollForm = this.formBuilder.group({
         Descripcion:['',Validators.required]
       });
@@ -70,11 +71,10 @@ export class DebatesInScrollComponent implements OnInit {
 
   async rating()
   {
-    console.log(this.currentRate);
-      /* let rating = new Rating();
+       let rating = new Rating();
       rating.AutorID  = this.usr.getUserId();
       rating.DebateId = this.debate.Id;
       rating.Rate = this.currentRate;
-      await this.ratingService.add(rating).toPromise();    */ 
+      await this.ratingService.add(rating).toPromise();    
   }
 }
