@@ -22,6 +22,7 @@ export class DebatesInScrollComponent implements OnInit {
   public debatesInScrollForm:FormGroup;
   public showComment = false;
   public textButton = "Ver comentarios";
+
   commentsInDebate$ : Observable<Comment>;
   constructor(private formBuilder:FormBuilder,
     private usr:UserService,private commentService:CommentService
@@ -31,11 +32,12 @@ export class DebatesInScrollComponent implements OnInit {
     }
 
   ngOnInit() {
-    console.log(this.debate);
+   
     this.currentRate = this.debate.Rate;
-      this.debatesInScrollForm = this.formBuilder.group({
+    this.debatesInScrollForm = this.formBuilder.group({
         Descripcion:['',Validators.required]
-      });
+    });
+      console.log(this.debatesInScrollForm);
   }
 
   async sendComment()

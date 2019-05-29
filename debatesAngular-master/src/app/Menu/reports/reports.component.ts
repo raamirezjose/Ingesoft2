@@ -1,5 +1,8 @@
-
 import { Component, OnInit } from '@angular/core';
+import { DebateService } from 'src/app/Services/debate.service';
+import { Observable, empty } from 'rxjs';
+import { Debates } from 'src/app/Model/debate';
+import { UserService } from 'src/app/Services/user.service';
 
 export interface PeriodicElement {
   name: string;
@@ -30,14 +33,27 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 export class ReportsComponent implements OnInit {
 
+  public countDebates = 0;
+  alldebates$ : Observable<Debates>;
+  
+  constructor(private debateService:DebateService,private userService:UserService) {
+    this.getDebates();
+  }
+
   public dataSource;
   public displayedColumns : string[];
 
-  constructor() { }
-
   ngOnInit() {
-    console.log(this.dataSource);
+
     this.dataSource = ELEMENT_DATA;
     this.displayedColumns = ['position', 'name', 'weight', 'symbol'];
+  }
+
+  async getDebates()
+  { 
+    this.alldebates$ =  this.debateService.getAll(this.userService.getUserId());    
+    this.alldebates$.forEach(element => {
+      this.countDebates = this.countDebates+1;
+    }); 
   }
 }
