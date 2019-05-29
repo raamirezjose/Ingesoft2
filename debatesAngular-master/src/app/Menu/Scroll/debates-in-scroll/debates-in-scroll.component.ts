@@ -10,7 +10,6 @@ import { RatingService } from 'src/app/Services/rating.service';
 import { Rating } from 'src/app/Model/rating';
 
 
-
 @Component({
   selector: 'app-debates-in-scroll',
   templateUrl: './debates-in-scroll.component.html',
@@ -32,7 +31,7 @@ export class DebatesInScrollComponent implements OnInit {
     }
 
   ngOnInit() {
-    console.log(this.debate.Rate);
+    console.log(this.debate);
     this.currentRate = this.debate.Rate;
       this.debatesInScrollForm = this.formBuilder.group({
         Descripcion:['',Validators.required]

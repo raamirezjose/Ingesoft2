@@ -11,3 +11,10 @@
   .filled.bad {
     color: #ff1e1e;
   }
+  .username{
+    text-transform: lowercase;
+  }
+
+  .pull-right {
+    float: right;
+  } 
