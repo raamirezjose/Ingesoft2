@@ -7,13 +7,13 @@ namespace debatesWebApi.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class debatesalter : IMigrationMetadata
+    public sealed partial class MigracionBaseDeDatos : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(debatesalter));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(MigracionBaseDeDatos));
         
         string IMigrationMetadata.Id
         {
-            get { return "201903191617505_debatesalter"; }
+            get { return "201905290259394_MigracionBaseDeDatos"; }
         }
         
         string IMigrationMetadata.Source

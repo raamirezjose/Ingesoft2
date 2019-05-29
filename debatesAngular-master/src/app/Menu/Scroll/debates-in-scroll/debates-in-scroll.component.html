@@ -1,3 +1,4 @@
+
 <div class="card bg-transparent mb-3" style="max-width: 32rem;">
     <div class="card-header bg-transparent">
       <div class="box-header with-border">
@@ -12,30 +13,32 @@
       <h5 class="card-title">Debate {{ debate.Titulo }}</h5>
       <small class="text-muted pull-right"> Fecha Vencimiento
           <cite title="Source Title">{{ debate.FechaVencimiento }}</cite>
-        </small><br>
+      </small><br>
  
       <img class="card-img-top" src="https://picsum.photos/id/{{debate.Id+20}}/3955/2094" alt="Card image cap"><br>
 
-      <p class="card-text">{{ debate.Tema }}.</p>
+      <p class="card-text"><small>{{ debate.Tema }}.</small></p>
       <small>
         <ngb-rating class="pull-right" [(rate)]="currentRate" max="5" [(ngModel)] = "currentRate" (click)="rating()">
           <ng-template let-fill="fill" let-index="index">
             <span   class="star" [class.filled]="fill === 100" [class.bad]="index < 2">&#9733;</span>
           </ng-template>
         </ngb-rating>
-        <ul class="">
-            <li class=""><cite title="Source Title" class="pull-left">Rate {{currentRate}} </cite></li>
-            <li class=""><cite title="Source Title" class="pull-left">Número de votos {{currentRate}} </cite></li>
-            <li class=""><cite title="Source Title" class="pull-left">Promedio {{currentRate}} </cite></li>
-          </ul>
+        <ul>
+            <cite title="Source Title" class="pull-left">Rate {{currentRate}} </cite> -
+            <cite title="Source Title" class="pull-left">Número de votos {{debate.RatingCount}} </cite> -
+            <cite title="Source Title" class="pull-left">Promedio {{debate.Average}} </cite>
+        </ul>
       </small>
     </div>
-    <div class="card-footer bg-transparent border-success">
+    <div class="box-footer box-comments bg-transparent border-success">
       <div *ngIf="showComment">
         <app-comments [currentComment]="xcomment" *ngFor="let xcomment of commentsInDebate$ | async"></app-comments>
       </div>
       <form [formGroup]="debatesInScrollForm" novalidate autocomplete="off">
         <div *ngIf="debate.Estado === false">
+  
+          <br>
           <div class="input-group">
             <!-- /btn-group -->
             <input type="text" name="Descripcion" class="form-control mb-3" formControlName="Descripcion"
@@ -44,10 +47,10 @@
               <button type="submit" [disabled]="debatesInScrollForm.invalid"
               class="btn btn-success uk-button-small rounded-0" (click)="sendComment()">Publicar</button>
             </div>
-          </div>
-          <div class="d-flex flex-wrap justify-content-between pull-right">
-            <button type="button" class="uk-button btn-default uk-button-small pull-right"
-            (click)="getComment()">{{textButton}} </button>
+            <div  class="input-group-btn">
+                <button type="button" class="btn btn-default uk-button-small rounded-0"
+                (click)="getComment()">{{textButton}} </button>
+            </div>
           </div>
         </div>
       </form>

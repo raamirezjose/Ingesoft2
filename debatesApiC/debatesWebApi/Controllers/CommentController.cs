@@ -34,10 +34,10 @@ namespace debatesWebApi.Controllers
                                   AutordId =a.Descripcion,
                                   FechaPublicacion = a.FechaPublicacion,
                                   AutorName = b.Name+" "+b.SecondName,
-                                  Rate = (from d in db.Ratings where d.DebateId == id && d.CommentId == a.Id select d.Rate).Take(1).Sum(),
-                                  RatingCount = (from d in db.Ratings where d.DebateId == id && d.CommentId == a.Id select d).Count(),
-                                  Average = (from d in db.Ratings where d.DebateId == id && d.CommentId == a.Id select d.Rate).Sum() /
-                                  (from d in db.Ratings where d.DebateId == id && d.CommentId == a.Id select d).Count()
+                                  Rate = (from d in db.Ratings where d.DebateId == id && d.CommentId == a.Id select d.Rate).FirstOrDefault(),
+                                  RatingCount = (from d in db.Ratings where d.DebateId == id && d.CommentId == a.Id select d).Count()
+                                  //Average = (from d in db.Ratings where d.DebateId == id && d.CommentId == a.Id select d.Rate).Sum() /
+                                  //(from d in db.Ratings where d.DebateId == id && d.CommentId == a.Id select d).Count()
                               };
             return comments.ToList();
         }

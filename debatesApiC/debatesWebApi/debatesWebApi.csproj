@@ -205,77 +205,9 @@
     <Compile Include="Migrations\201903061401239_intialMigration.Designer.cs">
       <DependentUpon>201903061401239_intialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903071235227_update-database.cs" />
-    <Compile Include="Migrations\201903071235227_update-database.Designer.cs">
-      <DependentUpon>201903071235227_update-database.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903081526295_updateuser.cs" />
-    <Compile Include="Migrations\201903081526295_updateuser.Designer.cs">
-      <DependentUpon>201903081526295_updateuser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903121746589_debates.cs" />
-    <Compile Include="Migrations\201903121746589_debates.Designer.cs">
-      <DependentUpon>201903121746589_debates.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903131626351_debatesupdate.cs" />
-    <Compile Include="Migrations\201903131626351_debatesupdate.Designer.cs">
-      <DependentUpon>201903131626351_debatesupdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903141733043_cambios.cs" />
-    <Compile Include="Migrations\201903141733043_cambios.Designer.cs">
-      <DependentUpon>201903141733043_cambios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903151240034_updatetypedate.cs" />
-    <Compile Include="Migrations\201903151240034_updatetypedate.Designer.cs">
-      <DependentUpon>201903151240034_updatetypedate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903151245134_updatetypedate2.cs" />
-    <Compile Include="Migrations\201903151245134_updatetypedate2.Designer.cs">
-      <DependentUpon>201903151245134_updatetypedate2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903151253412_UPDATEDATE.cs" />
-    <Compile Include="Migrations\201903151253412_UPDATEDATE.Designer.cs">
-      <DependentUpon>201903151253412_UPDATEDATE.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903151306200_updatedate3.cs" />
-    <Compile Include="Migrations\201903151306200_updatedate3.Designer.cs">
-      <DependentUpon>201903151306200_updatedate3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903152106238_comments.cs" />
-    <Compile Include="Migrations\201903152106238_comments.Designer.cs">
-      <DependentUpon>201903152106238_comments.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903181256117_updatecomments.cs" />
-    <Compile Include="Migrations\201903181256117_updatecomments.Designer.cs">
-      <DependentUpon>201903181256117_updatecomments.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903191611447_rol.cs" />
-    <Compile Include="Migrations\201903191611447_rol.Designer.cs">
-      <DependentUpon>201903191611447_rol.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903191617505_debatesalter.cs" />
-    <Compile Include="Migrations\201903191617505_debatesalter.Designer.cs">
-      <DependentUpon>201903191617505_debatesalter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903191705351_menuroles.cs" />
-    <Compile Include="Migrations\201903191705351_menuroles.Designer.cs">
-      <DependentUpon>201903191705351_menuroles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903201224176_qualification.cs" />
-    <Compile Include="Migrations\201903201224176_qualification.Designer.cs">
-      <DependentUpon>201903201224176_qualification.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903201331557_alterrate.cs" />
-    <Compile Include="Migrations\201903201331557_alterrate.Designer.cs">
-      <DependentUpon>201903201331557_alterrate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903221332134_debateratin.cs" />
-    <Compile Include="Migrations\201903221332134_debateratin.Designer.cs">
-      <DependentUpon>201903221332134_debateratin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905091529199_updatedatabse.cs" />
-    <Compile Include="Migrations\201905091529199_updatedatabse.Designer.cs">
-      <DependentUpon>201905091529199_updatedatabse.cs</DependentUpon>
+    <Compile Include="Migrations\201905290259394_MigracionBaseDeDatos.cs" />
+    <Compile Include="Migrations\201905290259394_MigracionBaseDeDatos.Designer.cs">
+      <DependentUpon>201905290259394_MigracionBaseDeDatos.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comments.cs" />
@@ -416,59 +348,8 @@
     <EmbeddedResource Include="Migrations\201903061401239_intialMigration.resx">
       <DependentUpon>201903061401239_intialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903071235227_update-database.resx">
-      <DependentUpon>201903071235227_update-database.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903081526295_updateuser.resx">
-      <DependentUpon>201903081526295_updateuser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903121746589_debates.resx">
-      <DependentUpon>201903121746589_debates.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903131626351_debatesupdate.resx">
-      <DependentUpon>201903131626351_debatesupdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903141733043_cambios.resx">
-      <DependentUpon>201903141733043_cambios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903151240034_updatetypedate.resx">
-      <DependentUpon>201903151240034_updatetypedate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903151245134_updatetypedate2.resx">
-      <DependentUpon>201903151245134_updatetypedate2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903151253412_UPDATEDATE.resx">
-      <DependentUpon>201903151253412_UPDATEDATE.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903151306200_updatedate3.resx">
-      <DependentUpon>201903151306200_updatedate3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903152106238_comments.resx">
-      <DependentUpon>201903152106238_comments.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903181256117_updatecomments.resx">
-      <DependentUpon>201903181256117_updatecomments.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903191611447_rol.resx">
-      <DependentUpon>201903191611447_rol.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903191617505_debatesalter.resx">
-      <DependentUpon>201903191617505_debatesalter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903191705351_menuroles.resx">
-      <DependentUpon>201903191705351_menuroles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903201224176_qualification.resx">
-      <DependentUpon>201903201224176_qualification.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903201331557_alterrate.resx">
-      <DependentUpon>201903201331557_alterrate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903221332134_debateratin.resx">
-      <DependentUpon>201903221332134_debateratin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905091529199_updatedatabse.resx">
-      <DependentUpon>201905091529199_updatedatabse.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905290259394_MigracionBaseDeDatos.resx">
+      <DependentUpon>201905290259394_MigracionBaseDeDatos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

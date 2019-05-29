@@ -13,7 +13,7 @@ export class CommentsComponent implements OnInit {
 
   @Input() currentComment: Comment;
   constructor(private ratingService:RatingService,private usr:UserService) { }
-  currentRate = 0;
+  public currentRate;
   ngOnInit() {
     this.currentRate = this.currentComment.Rate;
     
@@ -21,6 +21,7 @@ export class CommentsComponent implements OnInit {
 
   async rating()
   {
+    console.log(this.currentRate);
       let rating = new Rating();
       rating.AutorID  = this.usr.getUserId();
       rating.DebateId = this.currentComment.IdDebate;
