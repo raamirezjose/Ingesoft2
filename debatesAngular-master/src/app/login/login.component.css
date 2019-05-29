@@ -1,6 +1,6 @@
 .line{
   width: 100%;
-  border: 1px solid #5169ec;
+  border: 1px solid #222d32;
   float: left;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .word{
-  color:#5169ec;
+  color:#222d32;
 }
 
 .red{
@@ -45,7 +45,7 @@
 }
 
 .textLink{
-  color: #5169ec !important;
+  color: #1FB2DE !important;
 }
 
 .textLink:hover{
@@ -55,7 +55,7 @@
 
 .lineView{
   width: 10%;
-  border: 1px solid #5169ec;
+  border: 1px solid #1FB2DE;
 }
 
 .contentLogin, .contentRegister{
@@ -63,6 +63,11 @@
   background-size: cover;
   width: 100%;
   height: 100vh;
+}
+
+.icon-banner{
+  height: 18px;
+  width: 80%;
 }
 
 .formLogin{
@@ -92,6 +97,9 @@
 .btn{
   width: 100%;
   border-radius: 30px;
+  background: #1FB2DE;
+  border-color: #1FB2DE;
+  
 }
 
 .icons{

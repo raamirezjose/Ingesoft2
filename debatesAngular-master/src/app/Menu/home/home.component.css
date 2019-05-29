@@ -12,30 +12,30 @@
     font-size: 12px;
     line-height: 1;
     border: none;
-    background-color: #3097d1;
+    background-color: #222d32;
     color: #fff;
 }
 
 #nav-offcanvas{
-    background-color: #3097d1;
+    background-color: #222d32;
 }
 
 .btn-d-menu:hover{
     font-size: 12px;
     line-height: 1;
     border: none;
-    background-color: #155898;
+    background-color: #222d32;
 }
 
 #menu-v-lateral{
-    background-color: #3097d1;
+    background-color: #222d32;
 }
 
 #container-user-img{
     display: inline-block;
     height: 50px;
     width: 50px;
-    background-color: #53abff;
+    background-color: gray;
 }
 
 .text-12{

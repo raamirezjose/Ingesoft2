@@ -23,7 +23,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css",
+              "node_modules/admin-lte-css/dist/css/AdminLTE.css",
+              "node_modules/admin-lte-css/dist/css/skins/_all-skins.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -33,7 +36,8 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "with": "src/environments/environment.prod.ts",
+                  
                 }
               ],
               "optimization": true,
