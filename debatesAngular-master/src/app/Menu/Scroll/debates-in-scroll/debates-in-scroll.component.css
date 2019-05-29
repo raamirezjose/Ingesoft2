@@ -12,7 +12,7 @@
     color: #ff1e1e;
   }
   .username{
-    text-transform: lowercase;
+    text-transform: capitalize;
   }
 
   .pull-right {
