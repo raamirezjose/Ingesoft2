@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DebateService } from 'src/app/Services/debate.service';
 import { Observable, empty } from 'rxjs';
 import { Debates } from 'src/app/Model/debate';
+import { UserService } from 'src/app/Services/user.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { Debates } from 'src/app/Model/debate';
 export class ScrollDebatesComponent implements OnInit {
   public countDebates = 0;
   alldebates$ : Observable<Debates>;
-  constructor(private debateService:DebateService) {this.getDebates();}
+  constructor(private debateService:DebateService,private userService:UserService) {this.getDebates();}
 
   ngOnInit() {   
   }
@@ -20,7 +21,7 @@ export class ScrollDebatesComponent implements OnInit {
    async getDebates()
   { 
     /* this.alldebates$ = await this.debateService.getAll().toPromise(); */
-    this.alldebates$ =  this.debateService.getAll();    
+    this.alldebates$ =  this.debateService.getAll(this.userService.getUserId());    
      this.alldebates$.forEach(element => {
       if(element.length>0)
       {

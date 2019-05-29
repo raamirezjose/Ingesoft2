@@ -16,7 +16,7 @@ namespace debatesWebApi.Controllers
         // GET api/debates
        
         DataStore db = new DataStore();
-        public IEnumerable<object> Get() // cambiar metodo get para obtener rate por usuario activo en el sistema
+        public IEnumerable<object> Get(int idUsuario) // cambiar metodo get para obtener rate por usuario activo en el sistema
         {
 
             //actualizar estado de debates ya vencidos
@@ -40,8 +40,8 @@ namespace debatesWebApi.Controllers
                             FechaPublicacion = a.FechaPublicacion,
                             FechaVencimiento = a.FechaVencimiento,
                             Estado = a.Estado,
-                            Rate = (from c in db.Ratings where c.DebateId == a.Id && c.CommentId == 0 && c.AutorId == b.Id select c.Rate).FirstOrDefault()
-                            //RatingCount = (from d in db.Ratings where d.DebateId == a.Id && d.CommentId == 0 select d).Count(),
+                            Rate = (from c in db.Ratings where c.DebateId == a.Id && c.CommentId == 0 && c.AutorId == idUsuario select c.Rate).FirstOrDefault(),
+                            RatingCount = (from d in db.Ratings where d.DebateId == a.Id && d.CommentId == 0 select d).Count(),
                             //Average = ((from d in db.Ratings where d.DebateId == a.Id && d.CommentId == 0 select d).Count() ==0)?0:(from d in db.Ratings where d.DebateId == a.Id && d.CommentId == 0 select d.Rate).Sum() /
                             //(from d in db.Ratings where d.DebateId == a.Id && d.CommentId == 0 select d).Count() 
                         };

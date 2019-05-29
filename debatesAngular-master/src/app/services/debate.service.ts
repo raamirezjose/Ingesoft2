@@ -22,9 +22,9 @@ export class DebateService {
     return this.http.post(this.accessPointUrl,newDebate, {headers: this.headers});
   }
   
-  public getAll():Observable<Debates>
+  public getAll(id):Observable<Debates>
   {
-    return this.http.get<Debates>(this.accessPointUrl,{headers: this.headers}); 
+    return this.http.get<Debates>(this.accessPointUrl+"?idUsuario="+id,{headers: this.headers}); 
   } 
 
 }
